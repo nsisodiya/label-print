@@ -27,10 +27,10 @@ var htmlStrFront = `<!DOCTYPE html>
   <head>
     <meta charset="utf-8">
     <title></title>
-    <link rel="stylesheet" href="./normalize.css">
-    <link rel="stylesheet" href="./box-sizing.css">
-    <link rel="stylesheet" href="./index.css">
-    <script src="JsBarcode.code128.min.js" charset="utf-8"></script>
+    <link rel="stylesheet" href="./../normalize.css">
+    <link rel="stylesheet" href="./../box-sizing.css">
+    <link rel="stylesheet" href="./../index.css">
+    <script src="./../JsBarcode.code128.min.js" charset="utf-8"></script>
   </head>
   <body>`;
 
@@ -42,7 +42,7 @@ function generatePage(gridConfig, items) {
     console.log("Total Pages", totalPages);
     var allPages = "";
     for (var p = 0; p < totalPages; p++) {
-      //console.log(`Page, ${p}`);
+      console.log(`Page, ${p}`);
       allPages = allPages + `<a4page style="
       display: inline-block;
       width: ${paperWidth}mm;
@@ -61,8 +61,8 @@ function generatePage(gridConfig, items) {
             ">`;
             for (var j = 0; j <  numColumns; j++) {
               var numItem = p*numColumns*numRows + i*numColumns + j;
-              //console.log(i, j, numItem);
               var itemData = items[numItem];
+              console.log(i, j, numItem, itemData, JSON.stringify(itemData));
               var MB = "";
               if(i !== numRows - 1){
                 MB = `margin-bottom:${verticalPitch - height}mm;`;
@@ -120,13 +120,20 @@ function generatePage(gridConfig, items) {
     return allPages;
 }
 var htmlStrBack = `</body>
-<script src="afterLoad.js" charset="utf-8"></script>
+<script src="./../afterLoad.js" charset="utf-8"></script>
 </html>`;
+
+function fixLines(lines) {
+  return lines.map(function (v, i) {
+    return v.replace(/[\r]/g, '');
+  })
+}
 async function main() {
     try {
         const text = await readFileAsync(filePath, {encoding: 'utf8'});
         var items = [];
         var lines = text.split("\n");
+        lines = fixLines(lines);
         var headers = lines[0].split(",");
         lines.map(function (v, i) {
           if(v !== "" && i !== 0){
@@ -138,6 +145,8 @@ async function main() {
             items.push(temp);
           }
         });
+        //console.log('items', items);
+        //console.log('lines', lines);
         var htmlStr = `${htmlStrFront}
         ${generatePage(gridConfig, items)}
         ${htmlStrBack}`;
