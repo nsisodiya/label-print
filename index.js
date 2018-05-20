@@ -139,10 +139,12 @@ async function main() {
           if(v !== "" && i !== 0){
             var temp = {};
             var tempVals = v.split(",");
-            headers.map(function (u, j) {
-              temp[u] = tempVals[j];
-            })
-            items.push(temp);
+            if(tempVals[0] !== ""){
+              headers.map(function (u, j) {
+                temp[u] = tempVals[j];
+              })
+              items.push(temp);
+            }
           }
         });
         //console.log('items', items);
