@@ -1,0 +1,63 @@
+.page {
+  //border: 0.5px solid grey;
+}
+
+text {
+  display: inline-block;
+  line-height: 1;
+  font-size: 10px
+}
+
+.barcode {
+
+}
+.centerme {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+
+itemtitle, money, mrp, pricesection, colortext, sizetext {
+  font-family: "Helvetica Neue";
+  line-height: 1;
+  display: block;
+}
+colortext {
+  margin-top: 3mm;
+}
+money, mrp {
+  display: inline-block;
+}
+itemtitle {
+  font-size: 9pt;
+  color: #EC1951;
+  margin-top: 2mm;
+}
+money {
+  font-size: 20px;
+  color: #EC1951;
+}
+mrp {
+  font-size: 10.66px;
+  color: #EC1951;
+}
+
+pricesection {
+  margin-bottom: 3mm;
+}
+
+colortext, sizetext {
+  font-size: 8pt;
+  color: #4C4C4C;
+  font-weight: bold;
+}
+
+sizetext {
+  margin-bottom: 3mm;
+}
+text.address, .AveFont{
+  font-size: 7pt;
+  font-family: "Avenir Next Condensed",sans-serif;
+  color: black;
+}
