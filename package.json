@@ -2,9 +2,9 @@
   "name": "label-print",
   "version": "1.0.0",
   "description": "Small try for Label Print.",
-  "main": "index.js",
+  "main": "main.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "electron ."
   },
   "repository": {
     "type": "git",
@@ -18,5 +18,8 @@
   "homepage": "https://github.com/nsisodiya/label-print#readme",
   "dependencies": {
     "barcode": "^0.1.0"
+  },
+  "devDependencies": {
+    "electron": "^2.0.1"
   }
 }

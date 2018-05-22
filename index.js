@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 'use strict';
 console.log("Label Priting Software is by Narendra Sisodiya");
-
+//https://electronjs.org/docs/tutorial/first-app
 const {promisify} = require('util');
 
 const fs = require('fs');
