@@ -88,7 +88,14 @@ function generatePage(gridConfig, items) {
                   </div>
                 <itemtitle>${itemData.Title}</itemtitle>
                 <colortext>Color : ${itemData.Color}</colortext>
-                <sizetext>Size&nbsp : ${itemData.Size}</sizetext>
+                <sizetext>Size&nbsp : ${(()=>{
+                  if(itemData.Size2 === ""){
+                    return `${itemData.Size}`;
+                  } else {
+                    return `${itemData.Size} - ${itemData.Size2}`;
+                  }
+
+                })()}</sizetext>
                 <pricesection><money>₹ ${itemData.MRP}</money>&nbsp;&nbsp;&nbsp;<mrp>(MRP)</mrp></pricesection>
                 <span class="AveFont">
                 <text>Imported and Marketed by:</text>
