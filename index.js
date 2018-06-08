@@ -88,7 +88,7 @@ function generatePage(gridConfig, items) {
                   </div>
                 <itemtitle>${itemData.Title}</itemtitle>
                 <colortext>Color : ${itemData.Color}</colortext>
-                <sizetext>Size&nbsp : ${(()=>{
+                <sizetext>Size&nbsp;&nbsp; : ${(()=>{
                   if(itemData.Size2 === ""){
                     return `${itemData.Size}`;
                   } else {

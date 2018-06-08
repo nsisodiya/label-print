@@ -35,16 +35,20 @@ itemtitle {
   margin-top: 2mm;
 }
 money {
-  font-size: 20px;
-  color: #EC1951;
+  font-size: 26px;
+color: #f2f59e;
+font-weight: bold;
+background: #2b0909;
+padding: 4px;
+border-radius: 7px;
 }
 mrp {
-  font-size: 10.66px;
+  font-size: 8px;
   color: #EC1951;
 }
 
 pricesection {
-  margin-bottom: 3mm;
+  margin-bottom: 2mm;
 }
 
 colortext, sizetext {
@@ -54,7 +58,7 @@ colortext, sizetext {
 }
 
 sizetext {
-  margin-bottom: 3mm;
+  margin-bottom: 2mm;
 }
 text.address, .AveFont{
   font-size: 7pt;
